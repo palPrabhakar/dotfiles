@@ -1,5 +1,6 @@
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>!")
+vim.keymap.set("n", "<leader>w", "<cmd>w!<cr>")
+vim.keymap.set("n", "<leader>q", "<cmd>q!<cr>")
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })

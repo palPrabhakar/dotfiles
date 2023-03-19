@@ -26,3 +26,11 @@ vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
 
+vim.opt.foldenable = false
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.cmd.colorscheme "catppuccin-latte"
