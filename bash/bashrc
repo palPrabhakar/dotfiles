@@ -1,0 +1,6 @@
+# .bashrc
+export EDITOR=vi
+export VISUAL=vi
+
+set -o vi
+bind '"\C-l":clear-screen'
