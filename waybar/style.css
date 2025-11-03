@@ -1,0 +1,136 @@
+/* Tokyo Night Light – Neutral Gray Waybar */
+
+* {
+    font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: rgba(230, 232, 236, 0.95); /* soft gray background */
+    border-bottom: 2px solid #b7bcc7; /* subtle darker border */
+    color: #2e3440; /* dark text */
+    transition: background-color 0.5s ease;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Buttons */
+button {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    box-shadow: inset 0 -2px transparent;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    background: rgba(41, 46, 66, 0.08);
+    box-shadow: inset 0 -2px #7aa2f7; /* TokyoNight blue accent */
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 0 6px;
+    color: inherit;
+    background: transparent;
+}
+
+#workspaces button:hover {
+    background: rgba(41, 46, 66, 0.08);
+}
+
+#workspaces button.focused {
+    background: rgba(122, 162, 247, 0.18); /* faint blue highlight */
+    box-shadow: inset 0 -2px #7aa2f7;
+}
+
+#workspaces button.urgent {
+    background: rgba(247, 118, 142, 0.3);
+}
+
+/* Common module layout */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#language,
+#keyboard-state,
+#privacy {
+    padding: 0 10px;
+    background: transparent;
+    color: inherit;
+}
+
+/* Module margins */
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* Battery warning states */
+@keyframes blink {
+    to {
+        background-color: #f7768e;
+        color: #ffffff;
+    }
+}
+
+#battery.critical:not(.charging) {
+    animation: blink 0.5s steps(12) infinite alternate;
+}
+
+/* Idle inhibitor active */
+#idle_inhibitor.activated {
+    background: rgba(122, 162, 247, 0.18);
+}
+
+/* Focus or special modes */
+#mode {
+    background: rgba(122, 162, 247, 0.15);
+    box-shadow: inset 0 -2px #7aa2f7;
+}
+
+/* Scratchpad & Privacy */
+#scratchpad {
+    background: rgba(41, 46, 66, 0.05);
+}
+
+#scratchpad.empty {
+    background: transparent;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: inherit;
+    background: transparent;
+}
+
+#privacy-item.screenshare,
+#privacy-item.audio-in,
+#privacy-item.audio-out {
+    background: rgba(41, 46, 66, 0.1);
+}
+
